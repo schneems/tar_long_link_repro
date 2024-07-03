@@ -1,0 +1,6 @@
+[package]
+name = "tar_long_link_repro"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
