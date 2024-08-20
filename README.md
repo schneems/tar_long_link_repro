@@ -37,14 +37,19 @@ The names such as `specification_provider.rb` are truncated in the unarchived fi
 Unarchiving via the `tar` command on Mac (bsdtar 3.5.3)
 
 ```
-$ rm -rf tmp/cli-extracted && mkdir -p tmp/cli-extracted && cd tmp/cli-extracted && tar xzf ../../fixtures/jruby-dist-9.4.8.0-bin.tar.gz && cd -
+$ rm -rf tmp/cli-extracted; mkdir -p tmp/cli-extracted && cd tmp/cli-extracted && tar xzf ../../fixtures/jruby-dist-9.4.8.0-bin.tar.gz && cd -
 ```
 
-Shows the file while the rust version does not:
+Shows the file:
+
+```
+$ ls tmp/cli-extracted/jruby-9.4.8.0/lib/ruby/stdlib/bundler/vendor/molinillo/lib/molinillo/delegates
+resolution_state.rb		specification_provider.rb
+```
+
+While the rust version does not:
 
 ```
 $ ls tmp/rust-extracted/jruby-9.4.8.0/lib/ruby/stdlib/bundler/vendor/molinillo/lib/molinillo/delegates
 resolution_state.rb	specification_provide
-$ ls tmp/cli-extracted/jruby-9.4.8.0/lib/ruby/stdlib/bundler/vendor/molinillo/lib/molinillo/delegates
-resolution_state.rb		specification_provider.rb
 ```
